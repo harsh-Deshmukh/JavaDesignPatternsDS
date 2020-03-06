@@ -15,7 +15,7 @@ Github first time
         check for remote by --> git remote -v
         git push -f -u origin master // master is nothing but the branch name ib =n this case my branch name is master so like that else your branch name will be vary
 
-        ...so finally your projecr is on git hub
+        ............so finally your projecr is on git hub
 
 ** Create new branch
   As per project we have only one branch 'master' (currently is our base branch).So we will create new branch as name feature/java-design-pattern
