@@ -13,7 +13,7 @@ Github first time
         git commit -m ""
         git remote add origin <URL of newly created repo on 1st step> //this step add origin to your project which is remote location of repo.
         check for remote by --> git remote -v
-        git push -f -u origin master // master is nothing but the branch name ib =n this case my branch name is master so like that else your branch name will be vary
+        git push -f -u origin master // master is nothing but the branch name in this case my branch name is master so like that else your branch name will be vary
 
         ............so finally your projecr is on git hub
 
