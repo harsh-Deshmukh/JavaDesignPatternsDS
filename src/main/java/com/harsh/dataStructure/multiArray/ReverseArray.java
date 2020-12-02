@@ -1,0 +1,55 @@
+package com.harsh.dataStructure.multiArray;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+public class ReverseArray {
+
+    // Complete the reverseArray function below.
+    static int[] reverseArray(int[] a) {
+    	int size=a.length;
+    	int[] reverse=IntStream.range(0,size).map(i->a[size-i-1]).toArray();
+
+return reverse;
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File("C:\\Users\\harsh\\Desktop\\inputs.txt")));
+
+        int arrCount = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        int[] arr = new int[arrCount];
+
+        String[] arrItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < arrCount; i++) {
+            int arrItem = Integer.parseInt(arrItems[i]);
+            arr[i] = arrItem;
+        }
+
+        int[] res = reverseArray(arr);
+
+        for (int i = 0; i < res.length; i++) {
+            bufferedWriter.write(String.valueOf(res[i]));
+
+            if (i != res.length - 1) {
+                bufferedWriter.write(" ");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedWriter.close();
+
+        scanner.close();
+        System.out.println("end");
+    }
+}
