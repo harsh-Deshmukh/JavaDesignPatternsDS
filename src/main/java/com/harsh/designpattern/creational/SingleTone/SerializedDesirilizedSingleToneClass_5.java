@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 public class SerializedDesirilizedSingleToneClass_5 implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	private SerializedDesirilizedSingleToneClass_5() {
 		System.out.println("I am SerializedDesirilizedSingleToneClass() COnstructor");
 	}
@@ -18,22 +20,24 @@ public class SerializedDesirilizedSingleToneClass_5 implements Serializable {
 	private static class SingleTone {
 		private static final SerializedDesirilizedSingleToneClass_5 INSTANCE = new SerializedDesirilizedSingleToneClass_5();
 	}
-public static SerializedDesirilizedSingleToneClass_5 getInstance(){
-	return SingleTone.INSTANCE;
-}
 
-/*This method allow to replace object from stream before it is return.it is called immediate after 
- * readObject method trying to return Object to calling position,
- * OIS class always check whether serializable implemented class has this method implemented or not */
+	public static SerializedDesirilizedSingleToneClass_5 getInstance() {
+		return SingleTone.INSTANCE;
+	}
 
-private Object readResolve(){
-	return getInstance();
-}
+	/*
+	 * This method allow to replace object from stream before it is return.it is
+	 * called immediate after readObject method trying to return Object to calling
+	 * position, OIS class always check whether serializable implemented class has
+	 * this method implemented or not
+	 */
+
+	private Object readResolve() {
+		return getInstance();
+	}
 
 //throw exception when any on etry to clone singletone object 
-public Object clone() throws CloneNotSupportedException{
-	
+	public Object clone() throws CloneNotSupportedException {
 		throw new CloneNotSupportedException();
-	
-}
+	}
 }
